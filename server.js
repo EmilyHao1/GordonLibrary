@@ -12,8 +12,11 @@ var SQLconnection =
 var client = new pg.Client(SQLconnection);
 client.connect();
 
-var query = client.query('SELECT * From Books', function(err, result) {
+client.query('SELECT * From books', function(err, result) {
+  console.log('Bookid, ISBN, Title, Authors');
   result.rows.forEach(function(row) {
-    console.log(row.bookid);
+    console.log(
+      row.bookid + ',' + row.isbn + ',' + row.title + ',' + row.authors
+    );
   });
 });
