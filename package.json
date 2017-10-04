@@ -1,0 +1,28 @@
+{
+  "name": "gordon-library",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "lint": "prettier --write --single-quote \"*.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loriluo95/4241Final-Gordon-Library-Webpage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loriluo95/4241Final-Gordon-Library-Webpage/issues"
+  },
+  "homepage": "https://github.com/loriluo95/4241Final-Gordon-Library-Webpage#readme",
+  "dependencies": {
+    "express": "^4.16.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1",
+    "prettier": "^1.7.4"
+  }
+}
