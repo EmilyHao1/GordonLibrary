@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/loriluo95/4241Final-Gordon-Library-Webpage#readme",
   "dependencies": {
-    "express": "^4.16.1"
+    "express": "^4.16.1",
+    "pg": "^7.3.0"
   },
   "devDependencies": {
     "nodemon": "^1.12.1",
