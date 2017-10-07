@@ -78,20 +78,18 @@
 <script>
 	function searchFor(dataset_name) {
 		var param = document.querySelector("#titleSearched").value
-        var req = new XMLHttpRequest();
+		var req = new XMLHttpRequest();
 
-        req.responseType = 'json'
-        req.open('GET', "/books"+"?"+"title="+param)
+		req.responseType = 'json'
+		req.open('GET', "/books" + "?" + "title=" + param)
 
-        req.onload = function() {
-            const status = this.response.status
-            req.onload = function() {
-				//buildList(this.response)
-			}
-	
+		req.onload = function () {
+			const res = this.response
+			console.log(res)
 		}
 		req.send()
-    }
+	}
+
 </script>
 
 </html>
