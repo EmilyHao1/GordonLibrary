@@ -81,7 +81,7 @@
 		var req = new XMLHttpRequest();
 
 		req.responseType = 'json'
-		req.open('GET', "/books" + "?" + "title=" + param)
+		req.open('GET', "/book" + "?" + "title=" + param)
 
 		req.onload = function () {
 			const res = this.response
