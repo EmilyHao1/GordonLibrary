@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   db.client.query(
     `SELECT * From books WHERE UPPER(Title) LIKE '%${title.toUpperCase()}%'`,
     (err, result) => {
-      res.send(JSON.stringify(result.rows));
+      res.json(result.rows)
     }
   );
 });
