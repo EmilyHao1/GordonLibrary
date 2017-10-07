@@ -4,7 +4,7 @@ const SQLconnection =
   'postgres://xkvvjoiw:O6_92MrJi1A2YxAtGWFCO2PrqU3oJdGn@stampy.db.elephantsql.com:5432/xkvvjoiw';
 const client = new pg.Client(SQLconnection);
 client.connect();
-allBooks()
+allBooks();
 
 function allBooks() {
   client.query('SELECT * From books', (err, result) => {
@@ -18,4 +18,4 @@ function allBooks() {
 module.exports = {
   client,
   allBooks
-}
+};
