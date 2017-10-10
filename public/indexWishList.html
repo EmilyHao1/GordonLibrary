@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Search</title>
+	<title>Reserve</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -26,6 +26,33 @@
 			background-color: #f2f2f2;
 			padding: 25px;
 		}
+		#DateSearched{
+			padding-right: 20px;
+			float:left;
+			width: 40%;
+
+		}
+		#TimeSearched{
+			padding-left: 20px;
+			float:right;
+			width: 40%;
+		}
+		#result{
+			text-align: center;
+			height : 500px;
+			width: 100%;
+			border: 3px solid lightslategray;
+			border-radius: 8px;
+
+		}
+		.ResultContainer{
+			padding-right: 200px;
+			padding-left: 200px;
+			padding-top: 50px;
+			padding-bottom: 50px;
+			width:auto;
+
+		}
 	</style>
 </head>
 
@@ -34,7 +61,7 @@
 	<div class="jumbotron">
 		<div class="container text-center">
 			<h1>LibraryIsAlive</h1>
-			<p>Search</p>
+			<p>Reserve Tech Suite</p>
 		</div>
 	</div>
 
@@ -50,8 +77,8 @@
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
 					<li><a href="./indexDashboard.html">Dashboard</a></li>
-					<li class="active"><a href="./indexBookSearch.html">Search for Books</a></li>
-					<li><a href="./indexReserveTechSuite.html">Reserve TechSuite</a></li>
+					<li><a href="./indexBookSearch.html">Search for Books</a></li>
+					<li class="active"><a href="./indexReserveTechSuite.html">Reserve TechSuite</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
@@ -62,11 +89,22 @@
 
 
 	<div class="container">
-		<div>
-			<input id="titleSearched" type="title" class="form-control" size="120" placeholder="Search for book title...">
+		<div id = "DateSearched">
+			<input type="title" class="form-control" size="50" placeholder="Search for Date">
 			<button class="btn btn-danger" onclick="searchFor()">Search</button>
 		</div>
-	</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+		<div id = "TimeSearched">
+			<input  type="title" class="form-control" size="50" placeholder="Search for Time">
+			<button class="btn btn-danger" onclick="searchFor()">Search</button>
+		</div>
+
+
+	</div>
+
+	<div class = "ResultContainer">
+		<input id = "result" name="Result" placeholder="Lists of Results goes here">
+	</div>
 
 
 	<footer class="container-fluid text-center">
