@@ -1,18 +1,46 @@
-const express = require('express');
-const path = require('path');
-const pg = require('pg');
+var http = require('http')
+  , fs   = require('fs')
+  , url  = require('url')
+  , port = 8080;
 
-const db = require('./db');
-const books = require('./routes/books');
+var server = http.createServer (function (req, res) {
+  var uri = url.parse(req.url)
 
-const app = express();
+  switch( uri.pathname ) {
+    case '/':
+      sendFile(res, 'public/indexLogin.html')
+      break
+    case '/indexLogin.html':
+      sendFile(res, 'public/indexLogin.html')
+      break
+    case '/indexDashboard.html':
+      sendFile(res, 'public/indexDashboard.html')
+      break
+    case '/indexBookSearch.html':
+      sendFile(res, 'public/indexBookSearch.html')
+      break
+    case '/css/style.css':
+      sendFile(res, 'public/css/style.css', 'text/css')
+      break
+    case '/js/scripts.js':
+      sendFile(res, 'public/js/scripts.js', 'text/javascript')
+      break
+    default:
+      res.end('404 not found')
+  }
+})
 
-// static routes
-app.use(express.static(path.join(__dirname, 'public')));
-// routes
-app.use('/books', books);
+server.listen(process.env.PORT || port);
+console.log('listening on 8080')
 
-const port = process.env.PORT || 8080;
-app.listen(port, () => {
-  console.log(`listening at ${port}`);
-});
+// subroutines
+
+function sendFile(res, filename, contentType) {
+  contentType = contentType || 'text/html';
+
+  fs.readFile(filename, function(error, content) {
+    res.writeHead(200, {'Content-type': contentType})
+    res.end(content, 'utf-8')
+  })
+
+}
